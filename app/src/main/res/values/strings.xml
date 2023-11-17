@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CalculadoraAreas</string>
+    <string name="description_image_button_1">Descripción para ImageButton 4</string>
+    <string name="description_image_button_2">Descripción para ImageButton 4</string>
+    <string name="description_image_button_3">Descripción para ImageButton 4</string>
+    <string name="description_image_button_4">Descripción para ImageButton 4</string>
+    <string name="description_image_button_5">Descripción para ImageButton 4</string>
+    <string name="description_image_button_6">Descripción para ImageButton 4</string>
+
 </resources>

@@ -17,57 +17,76 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_weight="0.3" >
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_weight="0.3">
 
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:alignmentMode="alignMargins"
             android:columnCount="3"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:rowCount="2">
 
             <ImageButton
-                android:id="@+id/imageButton7"
+                android:id="@+id/imageButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/triangle"
+                android:background="?android:attr/selectableItemBackground"
                 android:layout_gravity="center"
-                android:src="@android:drawable/btn_star" />
+                android:contentDescription="@string/description_image_button_1"/>
 
+            <!-- ImageButton 2 -->
             <ImageButton
-                android:id="@+id/imageButton8"
+                android:id="@+id/imageButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/square"
+                android:background="?android:attr/selectableItemBackground"
                 android:layout_gravity="center"
-                android:src="@android:drawable/btn_star" />
+                android:contentDescription="@string/description_image_button_2"/>
 
+            <!-- ImageButton 3 -->
             <ImageButton
-                android:id="@+id/imageButton9"
+                android:id="@+id/imageButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/circle"
+                android:background="?android:attr/selectableItemBackground"
                 android:layout_gravity="center"
-                android:src="@android:drawable/btn_star" />
+                android:contentDescription="@string/description_image_button_3"/>
 
+            <!-- ImageButton 4 -->
             <ImageButton
-                android:id="@+id/imageButton10"
+                android:id="@+id/imageButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/octagon"
+                android:background="?android:attr/selectableItemBackground"
                 android:layout_gravity="center"
-                android:src="@android:drawable/btn_star" />
+                android:contentDescription="@string/description_image_button_4"/>
 
+            <!-- ImageButton 5 -->
             <ImageButton
-                android:id="@+id/imageButton11"
+                android:id="@+id/imageButton5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/hexagon"
+                android:background="?android:attr/selectableItemBackground"
                 android:layout_gravity="center"
-                android:src="@android:drawable/btn_star" />
+                android:contentDescription="@string/description_image_button_5"/>
 
+            <!-- ImageButton 6 -->
             <ImageButton
-                android:id="@+id/imageButton12"
+                android:id="@+id/imageButton6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/pentagono"
+                android:background="?android:attr/selectableItemBackground"
                 android:layout_gravity="center"
-                android:src="@android:drawable/btn_star" />
+                android:contentDescription="@string/description_image_button_6"/>
         </GridLayout>
     </FrameLayout>
 
