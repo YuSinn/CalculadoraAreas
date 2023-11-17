@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val imageView: ImageView = findViewById(R.id.titulo)
-        Glide.with(this).asGif().load(R.drawable.titulo).into(imageView)
+        Glide.with(this).asGif().load(R.drawable.titulo7).into(imageView)
 
     }
 }
