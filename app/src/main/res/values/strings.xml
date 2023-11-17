@@ -6,5 +6,16 @@
     <string name="description_image_button_4">Descripción para ImageButton 4</string>
     <string name="description_image_button_5">Descripción para ImageButton 4</string>
     <string name="description_image_button_6">Descripción para ImageButton 4</string>
+    <string name="description_image_button_zero">Descripción para ImageButton 4</string>
+    <string name="description_image_button_uno">Descripción para ImageButton 4</string>
+    <string name="description_image_button_dos">Descripción para ImageButton 4</string>
+    <string name="description_image_button_tres">Descripción para ImageButton 4</string>
+    <string name="description_image_button_cuatro">Descripción para ImageButton 4</string>
+    <string name="description_image_button_cinco">Descripción para ImageButton 4</string>
+    <string name="description_image_button_seis">Descripción para ImageButton 4</string>
+    <string name="description_image_button_siete">Descripción para ImageButton 4</string>
+    <string name="description_image_button_ocho">Descripción para ImageButton 4</string>
+    <string name="description_image_button_nueve">Descripción para ImageButton 4</string>
+
 
 </resources>

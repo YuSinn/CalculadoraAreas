@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1"
+        android:src="@drawable/calarea"
         tools:srcCompat="@tools:sample/avatars" />
 
     <FrameLayout
@@ -96,11 +97,141 @@
         android:layout_weight="0.2"
         android:orientation="vertical"></LinearLayout>
 
-    <GridLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.3"
-        android:orientation="vertical"></GridLayout>
+        android:layout_gravity="center"
+        android:layout_weight="0.3">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:alignmentMode="alignMargins"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:rowCount="3">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:scaleType="fitCenter"
+                android:src="@drawable/nueve"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_nueve"/>
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ocho"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_ocho"/>
+
+            <ImageButton
+                android:id="@+id/imageButton8"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:scaleType="fitCenter"
+                android:src="@drawable/siete"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_siete"/>
+
+            <ImageButton
+                android:id="@+id/imageButton9"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:scaleType="fitCenter"
+                android:src="@drawable/seis"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_seis"/>
+
+            <ImageButton
+                android:id="@+id/imageButton10"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cinco"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_cinco"/>
+
+            <ImageButton
+                android:id="@+id/imageButton11"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cuatro"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_cuatro"/>
+
+            <ImageButton
+                android:id="@+id/imageButton12"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:scaleType="fitCenter"
+                android:src="@drawable/tres"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_tres"/>
+
+            <ImageButton
+                android:id="@+id/imageButton13"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dos"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_dos"/>
+
+            <ImageButton
+                android:id="@+id/imageButton14"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:scaleType="fitCenter"
+                android:src="@drawable/uno"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_uno"/>
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_column="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cero"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_zero"/>
+        </GridLayout>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
