@@ -113,123 +113,124 @@
             android:rowCount="3">
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/btnNueve"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_rowSpan="1"
                 android:layout_columnSpan="1"
                 android:layout_gravity="center_horizontal|fill"
                 android:scaleType="fitCenter"
-                android:src="@drawable/nueve"
+                android:src="@drawable/nueve2"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_nueve"/>
 
             <ImageButton
-                android:id="@+id/imageButton7"
+                android:id="@+id/btnOcho"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_rowSpan="1"
                 android:layout_columnSpan="1"
                 android:layout_gravity="center_horizontal|fill"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ocho"
+                android:src="@drawable/ocho2"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_ocho"/>
 
             <ImageButton
-                android:id="@+id/imageButton8"
+                android:id="@+id/btnSiete"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_rowSpan="1"
                 android:layout_columnSpan="1"
                 android:layout_gravity="center_horizontal|fill"
                 android:scaleType="fitCenter"
-                android:src="@drawable/siete"
+                android:src="@drawable/siete2"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_siete"/>
 
             <ImageButton
-                android:id="@+id/imageButton9"
+                android:id="@+id/btnSeis"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_rowSpan="1"
                 android:layout_columnSpan="1"
                 android:layout_gravity="center_horizontal|fill"
                 android:scaleType="fitCenter"
-                android:src="@drawable/seis"
+                android:src="@drawable/seis2"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_seis"/>
 
             <ImageButton
-                android:id="@+id/imageButton10"
+                android:id="@+id/btnCinco"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_rowSpan="1"
                 android:layout_columnSpan="1"
                 android:layout_gravity="center_horizontal|fill"
                 android:scaleType="fitCenter"
-                android:src="@drawable/cinco"
+                android:src="@drawable/cinco2"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_cinco"/>
 
             <ImageButton
-                android:id="@+id/imageButton11"
+                android:id="@+id/btnCuatro"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_rowSpan="1"
                 android:layout_columnSpan="1"
                 android:layout_gravity="center_horizontal|fill"
                 android:scaleType="fitCenter"
-                android:src="@drawable/cuatro"
+                android:src="@drawable/cuatro2"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_cuatro"/>
 
             <ImageButton
-                android:id="@+id/imageButton12"
+                android:id="@+id/btnTres"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_rowSpan="1"
                 android:layout_columnSpan="1"
                 android:layout_gravity="center_horizontal|fill"
                 android:scaleType="fitCenter"
-                android:src="@drawable/tres"
+                android:src="@drawable/tres2"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_tres"/>
 
             <ImageButton
-                android:id="@+id/imageButton13"
+                android:id="@+id/btnDos"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_rowSpan="1"
                 android:layout_columnSpan="1"
                 android:layout_gravity="center_horizontal|fill"
                 android:scaleType="fitCenter"
-                android:src="@drawable/dos"
+                android:src="@drawable/dos2"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_dos"/>
 
             <ImageButton
-                android:id="@+id/imageButton14"
+                android:id="@+id/btnUno"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_rowSpan="1"
                 android:layout_columnSpan="1"
                 android:layout_gravity="center_horizontal|fill"
                 android:scaleType="fitCenter"
-                android:src="@drawable/uno"
+                android:src="@drawable/uno2"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_uno"/>
 
             <ImageButton
+                android:id="@+id/btnCero"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_rowSpan="1"
                 android:layout_column="1"
                 android:layout_gravity="center_horizontal|fill"
-                android:scaleType="fitCenter"
-                android:src="@drawable/cero"
                 android:background="?android:attr/selectableItemBackground"
-                android:contentDescription="@string/description_image_button_zero"/>
+                android:contentDescription="@string/description_image_button_zero"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cero3" />
         </GridLayout>
     </FrameLayout>
 
@@ -252,7 +253,7 @@
             android:layout_weight="1"
             android:background="?android:attr/selectableItemBackground"
             android:contentDescription="@string/description_image_button_calcular"
-            android:src="@drawable/calcular" />
+            android:src="@drawable/calcular3" />
 
         <Space
             android:layout_width="wrap_content"
@@ -266,7 +267,7 @@
             android:layout_weight="1"
             android:background="?android:attr/selectableItemBackground"
             android:contentDescription="@string/description_image_button_borrar"
-            android:src="@drawable/borrar" />
+            android:src="@drawable/borrar2" />
 
         <Space
             android:layout_width="wrap_content"
