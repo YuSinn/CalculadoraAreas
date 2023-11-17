@@ -245,24 +245,28 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnCalcular"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Calcular" />
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/description_image_button_calcular"
+            android:src="@drawable/calcular" />
 
         <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnBorrar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Borrar" />
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/description_image_button_borrar"
+            android:src="@drawable/borrar" />
 
         <Space
             android:layout_width="wrap_content"

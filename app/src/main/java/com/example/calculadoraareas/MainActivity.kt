@@ -12,5 +12,6 @@ class MainActivity : AppCompatActivity() {
         val imageView: ImageView = findViewById(R.id.titulo)
         Glide.with(this).asGif().load(R.drawable.titulo7).into(imageView)
 
+
     }
 }

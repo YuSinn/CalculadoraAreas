@@ -16,6 +16,8 @@
     <string name="description_image_button_siete">Descripción para ImageButton 4</string>
     <string name="description_image_button_ocho">Descripción para ImageButton 4</string>
     <string name="description_image_button_nueve">Descripción para ImageButton 4</string>
+    <string name="description_image_button_calcular">Descripción para ImageButton 4</string>
+    <string name="description_image_button_borrar">Descripción para ImageButton 4</string>
 
 
 </resources>
