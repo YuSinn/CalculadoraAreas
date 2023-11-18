@@ -31,7 +31,7 @@
             android:rowCount="2">
 
             <ImageButton
-                android:id="@+id/imageButton1"
+                android:id="@+id/btnTriangulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/triangle"
@@ -41,7 +41,7 @@
 
             <!-- ImageButton 2 -->
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/btnCuadrado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/square"
@@ -51,7 +51,7 @@
 
             <!-- ImageButton 3 -->
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/btnCirculo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/circle"
@@ -61,7 +61,7 @@
 
             <!-- ImageButton 4 -->
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/btnOctagono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/octagon"
@@ -71,7 +71,7 @@
 
             <!-- ImageButton 5 -->
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/btnHexagono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/hexagon"
@@ -81,7 +81,7 @@
 
             <!-- ImageButton 6 -->
             <ImageButton
-                android:id="@+id/imageButton6"
+                android:id="@+id/btnPentagono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/pentagono"
@@ -95,7 +95,54 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.2"
-        android:orientation="vertical"></LinearLayout>
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5"
+            android:contextClickable="false"
+            android:gravity="center"
+            android:paddingRight="150dp"
+            android:text="Opción:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.25" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5"
+            android:gravity="center"
+            android:paddingRight="150dp"
+            android:text="Lado:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.25" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5"
+            android:gravity="center_horizontal"
+            android:paddingRight="150dp"
+            android:text="Resultado:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
