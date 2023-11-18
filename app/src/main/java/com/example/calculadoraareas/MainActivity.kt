@@ -2,15 +2,27 @@ package com.example.calculadoraareas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
 import com.bumptech.glide.Glide
 
+import kotlin.math.pow
+import kotlin.math.round
+
 class MainActivity : AppCompatActivity() {
+    lateinit var textViewOpcion:TextView
+    lateinit var textViewRadioLado:TextView
+    lateinit var textViewResultado:TextView
+    var numeroParaArea = ""
+    var numeroFinal = 0
+    var figuraSeleccionada = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val imageView: ImageView = findViewById(R.id.titulo)
+
 
 // Lista de ImageButton y sus correspondientes recursos
         val imageButtons: List<Pair<ImageButton, Int>> = listOf(
@@ -37,5 +49,148 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+    fun onTriangulo(view:View){
+        textViewOpcion = findViewById(R.id.textViewOpcion)
+        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        textViewOpcion.text = "Opción: Triangulo"
+        textViewRadioLado.text = "Lado: "
+        figuraSeleccionada="triangulo"
+    }
+
+    fun onCuadrado(view:View){
+        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        textViewOpcion = findViewById(R.id.textViewOpcion)
+        textViewOpcion.text = "Opción: Cuadrado"
+        textViewRadioLado.text = "Lado: "
+        figuraSeleccionada="cuadrado"
+    }
+    fun onCirculo(view:View){
+        textViewOpcion = findViewById(R.id.textViewOpcion)
+        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        textViewOpcion.text = "Opción: Circulo"
+        textViewRadioLado.text = "Radio:"
+        figuraSeleccionada="circulo"
+    }
+    fun onOctagono(view:View){
+        textViewOpcion = findViewById(R.id.textViewOpcion)
+        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        textViewOpcion.text = "Opción: Octagono"
+        textViewRadioLado.text = "Lado: "
+        figuraSeleccionada="octagono"
+    }
+    fun onHexagono(view:View){
+        textViewOpcion = findViewById(R.id.textViewOpcion)
+        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        textViewOpcion.text = "Opción: Hexagono"
+        textViewRadioLado.text = "Lado: "
+        figuraSeleccionada="hexagono"
+    }
+    fun onPentagono(view:View){
+        textViewOpcion = findViewById(R.id.textViewOpcion)
+        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        textViewOpcion.text = "Opción: Pentagono"
+        textViewRadioLado.text = "Lado: "
+        figuraSeleccionada="pentagono"
+    }
+    fun onBorrar(view:View){
+        textViewOpcion = findViewById(R.id.textViewOpcion)
+        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        textViewResultado = findViewById(R.id.textViewResultado)
+        textViewOpcion.text = "Opción: "
+        textViewRadioLado.text = "Lado: "
+        textViewResultado.text = "Resultado: "
+        numeroFinal=0
+        numeroParaArea=""
+    }
+    fun agregarNumero(view: View) {
+        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        val botonPresionado = view as ImageButton
+        val numero = botonPresionado.contentDescription?.toString() ?: ""
+        numeroParaArea +=numero
+        // Obtener el texto actual del TextView
+        val textoActual = textViewRadioLado.text.toString()
+
+        if(textoActual.length < 11) {
+            // Concatenar el número al texto actual
+            textViewRadioLado.text = "$textoActual$numero"
+            numeroFinal = numeroParaArea.toInt()
+        }
+
+
+    }
+    fun onCero(view: View){
+        agregarNumero(view)
+    }
+    fun onUno(view: View){
+        agregarNumero(view)
+    }
+    fun onDos(view: View){
+        agregarNumero(view)
+    }
+    fun onTres(view: View){
+        agregarNumero(view)
+    }
+    fun onCuatro(view: View){
+        agregarNumero(view)
+    }
+    fun onCinco(view: View){
+        agregarNumero(view)
+    }
+    fun onSeis(view: View){
+        agregarNumero(view)
+    }
+    fun onSiete(view: View){
+        agregarNumero(view)
+    }fun onOcho(view: View){
+        agregarNumero(view)
+    }
+    fun onNueve(view: View){
+        agregarNumero(view)
+    }
+    fun round(numero: Double, decimales: Int): Double {
+        val factor = 10.0.pow(decimales.toDouble())
+        return kotlin.math.round(numero * factor) / factor
+    }
+    fun onCalcular (view: View){
+        textViewResultado = findViewById(R.id.textViewResultado)
+        var resultado :Double
+        when (figuraSeleccionada.toLowerCase()) {
+            "triangulo" -> {
+                // Fórmula para el área de un triángulo
+                // A = (base * altura) / 2
+                resultado = (kotlin.math.sqrt(3.0) / 4) * numeroFinal.toDouble().pow(2)
+            }
+            "cuadrado" -> {
+                // Fórmula para el área de un cuadrado
+                // A = lado^2
+                 // Reemplaza con tu valor real
+                resultado = numeroFinal.toDouble().pow(2)
+            }
+            "circulo" -> {
+                // Fórmula para el área de un círculo
+                // A = π * radio^2
+                resultado = Math.PI * numeroFinal.toDouble().pow(2)
+            }
+            "octagono" -> {
+                // A = 2 * (1 + sqrt(2)) * lado^2
+                resultado = 2 * (1 + kotlin.math.sqrt(2.0)) * numeroFinal.toDouble().pow(2)
+            }
+            "hexagono" -> {
+                // A = (3 * sqrt(3) / 2) * lado^2
+                resultado = (3 * kotlin.math.sqrt(3.0) / 2) * numeroFinal.toDouble().pow(2)
+            }
+            "pentagono" -> {
+                // A = (1/4) * sqrt(5 * (5 + 2 * sqrt(5))) * lado^2
+                resultado = (1.0 / 4) * kotlin.math.sqrt(5 * (5 + 2 * kotlin.math.sqrt(5.0))) * numeroFinal.toDouble().pow(2)
+            }
+            // Agrega más casos para otras figuras si es necesario
+            else -> {
+                // Valor por defecto o manejo de errores
+                resultado = 0.0
+            }
+        }
+        resultado=round(resultado,3)
+        textViewResultado.text = textViewResultado.text.toString() + resultado.toString()
     }
 }
