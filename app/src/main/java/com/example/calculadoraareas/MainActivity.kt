@@ -53,45 +53,69 @@ class MainActivity : AppCompatActivity() {
     fun onTriangulo(view:View){
         textViewOpcion = findViewById(R.id.textViewOpcion)
         textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        textViewResultado = findViewById(R.id.textViewResultado)
         textViewOpcion.text = "Opción: Triangulo"
         textViewRadioLado.text = "Lado: "
+        textViewResultado.text = "Resultado: "
         figuraSeleccionada="triangulo"
+        numeroFinal = 0
+        numeroParaArea = ""
     }
 
     fun onCuadrado(view:View){
         textViewRadioLado = findViewById(R.id.textViewLadoRadio)
         textViewOpcion = findViewById(R.id.textViewOpcion)
+        textViewResultado = findViewById(R.id.textViewResultado)
         textViewOpcion.text = "Opción: Cuadrado"
         textViewRadioLado.text = "Lado: "
+        textViewResultado.text = "Resultado: "
         figuraSeleccionada="cuadrado"
+        numeroFinal = 0
+        numeroParaArea = ""
     }
     fun onCirculo(view:View){
         textViewOpcion = findViewById(R.id.textViewOpcion)
         textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        textViewResultado = findViewById(R.id.textViewResultado)
         textViewOpcion.text = "Opción: Circulo"
         textViewRadioLado.text = "Radio:"
+        textViewResultado.text = "Resultado: "
         figuraSeleccionada="circulo"
+        numeroFinal = 0
+        numeroParaArea = ""
     }
     fun onOctagono(view:View){
         textViewOpcion = findViewById(R.id.textViewOpcion)
         textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        textViewResultado = findViewById(R.id.textViewResultado)
         textViewOpcion.text = "Opción: Octagono"
         textViewRadioLado.text = "Lado: "
+        textViewResultado.text = "Resultado: "
         figuraSeleccionada="octagono"
+        numeroFinal = 0
+        numeroParaArea = ""
     }
     fun onHexagono(view:View){
         textViewOpcion = findViewById(R.id.textViewOpcion)
         textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        textViewResultado = findViewById(R.id.textViewResultado)
         textViewOpcion.text = "Opción: Hexagono"
         textViewRadioLado.text = "Lado: "
+        textViewResultado.text = "Resultado: "
         figuraSeleccionada="hexagono"
+        numeroFinal = 0
+        numeroParaArea = ""
     }
     fun onPentagono(view:View){
         textViewOpcion = findViewById(R.id.textViewOpcion)
         textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        textViewResultado = findViewById(R.id.textViewResultado)
         textViewOpcion.text = "Opción: Pentagono"
         textViewRadioLado.text = "Lado: "
+        textViewResultado.text = "Resultado: "
         figuraSeleccionada="pentagono"
+        numeroFinal = 0
+        numeroParaArea = ""
     }
     fun onBorrar(view:View){
         textViewOpcion = findViewById(R.id.textViewOpcion)
