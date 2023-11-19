@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/main_background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:src="@drawable/titulo7"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_weight="0.3">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:alignmentMode="alignMargins"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:rowCount="2">
+
+            <ImageButton
+                android:id="@+id/btnTriangulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_1"
+                android:onClick="onTriangulo"
+                app:tint="@color/figuras"
+                android:src="@drawable/triangle" />
+
+            <!-- ImageButton 2 -->
+            <ImageButton
+                android:id="@+id/btnCuadrado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_2"
+                android:onClick="onCuadrado"
+                app:tint="@color/figuras"
+                android:src="@drawable/square" />
+
+            <!-- ImageButton 3 -->
+            <ImageButton
+                android:id="@+id/btnCirculo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_3"
+                android:onClick="onCirculo"
+                app:tint="@color/figuras"
+                android:src="@drawable/circle" />
+
+            <!-- ImageButton 4 -->
+            <ImageButton
+                android:id="@+id/btnOctagono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_4"
+                android:onClick="onOctagono"
+                app:tint="@color/figuras"
+                android:src="@drawable/octagon" />
+
+            <!-- ImageButton 5 -->
+            <ImageButton
+                android:id="@+id/btnHexagono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_5"
+                android:onClick="onHexagono"
+                app:tint="@color/figuras"
+                android:src="@drawable/hexagon" />
+
+            <!-- ImageButton 6 -->
+            <ImageButton
+                android:id="@+id/btnPentagono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_6"
+                android:onClick="onPentagono"
+                app:tint="@color/figuras"
+                android:src="@drawable/pentagono" />
+        </GridLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewOpcion"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5"
+            android:contextClickable="false"
+            android:gravity="center"
+            android:text="Opción: "
+            android:textColor="@color/figuras"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.25" />
+
+        <TextView
+            android:id="@+id/textViewLadoRadio"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5"
+            android:gravity="center"
+            android:text="Lado: "
+            android:textColor="@color/figuras"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.25" />
+
+        <TextView
+            android:id="@+id/textViewResultado"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5"
+            android:gravity="center_horizontal"
+            android:text="Resultado: "
+            android:textColor="@color/figuras"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="0.3">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:alignmentMode="alignMargins"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:rowCount="3">
+
+            <ImageButton
+                android:id="@+id/btnNueve"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_nueve"
+                android:onClick="onNueve"
+                android:scaleType="fitCenter"
+                android:src="@drawable/nueve2" />
+
+            <ImageButton
+                android:id="@+id/btnOcho"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_ocho"
+                android:onClick="onOcho"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ocho2" />
+
+            <ImageButton
+                android:id="@+id/btnSiete"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_siete"
+                android:onClick="onSiete"
+                android:scaleType="fitCenter"
+                android:src="@drawable/siete2" />
+
+            <ImageButton
+                android:id="@+id/btnSeis"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_seis"
+                android:onClick="onSeis"
+                android:scaleType="fitCenter"
+                android:src="@drawable/seis2" />
+
+            <ImageButton
+                android:id="@+id/btnCinco"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_cinco"
+                android:onClick="onCinco"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cinco2" />
+
+            <ImageButton
+                android:id="@+id/btnCuatro"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_cuatro"
+                android:onClick="onCuatro"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cuatro2" />
+
+            <ImageButton
+                android:id="@+id/btnTres"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_tres"
+                android:onClick="onTres"
+                android:scaleType="fitCenter"
+                android:src="@drawable/tres2" />
+
+            <ImageButton
+                android:id="@+id/btnDos"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_dos"
+                android:onClick="onDos"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dos2" />
+
+            <ImageButton
+                android:id="@+id/btnUno"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_uno"
+                android:onClick="onUno"
+                android:scaleType="fitCenter"
+                android:src="@drawable/uno2" />
+
+            <ImageButton
+                android:id="@+id/btnCero"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_rowSpan="1"
+                android:layout_column="1"
+                android:layout_gravity="center_horizontal|fill"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/description_image_button_zero"
+                android:onClick="onCero"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cero3" />
+        </GridLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btnCalcular"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/description_image_button_calcular"
+            android:onClick="onCalcular"
+            android:src="@drawable/calcular3" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btnBorrar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/description_image_button_borrar"
+            android:onClick="onBorrar"
+            android:src="@drawable/borrar2" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

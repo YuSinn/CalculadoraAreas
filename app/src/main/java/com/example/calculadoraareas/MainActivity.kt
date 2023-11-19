@@ -1,17 +1,23 @@
 package com.example.calculadoraareas
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 
 import kotlin.math.pow
 import kotlin.math.round
 
 class MainActivity : AppCompatActivity() {
+    val buttonIds = listOf(R.id.btnTriangulo, R.id.btnCuadrado, R.id.btnCirculo, R.id.btnOctagono,
+        R.id.btnHexagono, R.id.btnPentagono)
+    val defaultColor: Int by lazy { ContextCompat.getColor(this, R.color.figuras) }
+    val clickedColor: Int by lazy { ContextCompat.getColor(this, R.color.white)}
     lateinit var textViewOpcion:TextView
     lateinit var textViewRadioLado:TextView
     lateinit var textViewResultado:TextView
@@ -49,71 +55,53 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-    }
-    fun onTriangulo(view:View){
-        textViewOpcion = findViewById(R.id.textViewOpcion)
-        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
-        textViewResultado = findViewById(R.id.textViewResultado)
-        textViewOpcion.text = "Opción: Triangulo"
-        textViewRadioLado.text = "Lado: "
-        textViewResultado.text = "Resultado: "
-        figuraSeleccionada="triangulo"
-        numeroFinal = 0
-        numeroParaArea = ""
-    }
+        for (buttonId in buttonIds) {
+            val button = findViewById<ImageButton>(buttonId)
 
-    fun onCuadrado(view:View){
-        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+            button.setOnClickListener {
+                resetButtons()
+                button.setColorFilter(clickedColor)
+
+                if(buttonId == R.id.btnTriangulo){
+                    initTextView()
+                    textViewOpcion.text = "Opción: Triangulo"
+                    figuraSeleccionada="triangulo"
+                }else if(buttonId == R.id.btnCuadrado){
+                    initTextView()
+                    textViewOpcion.text = "Opción: Cuadrado"
+                    figuraSeleccionada="cuadrado"
+                }
+                else if(buttonId == R.id.btnCirculo){
+                    initTextView()
+                    textViewOpcion.text = "Opción: Circulo"
+                    textViewRadioLado.text = "Radio: "
+                    figuraSeleccionada="circulo"
+                }
+                else if(buttonId == R.id.btnOctagono){
+                    initTextView()
+                    textViewOpcion.text = "Opción: Octagono"
+                    figuraSeleccionada="octagono"
+                }
+                else if(buttonId == R.id.btnHexagono){
+                    initTextView()
+                    textViewOpcion.text = "Opción: Hexagono"
+                    figuraSeleccionada="hexagono"
+                }
+                else if(buttonId == R.id.btnPentagono){
+                    initTextView()
+                    textViewOpcion.text = "Opción: Pentagono"
+                    figuraSeleccionada="pentagono"
+                }
+            }
+        }
+
+    }
+    fun initTextView(){
         textViewOpcion = findViewById(R.id.textViewOpcion)
+        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
         textViewResultado = findViewById(R.id.textViewResultado)
-        textViewOpcion.text = "Opción: Cuadrado"
         textViewRadioLado.text = "Lado: "
         textViewResultado.text = "Resultado: "
-        figuraSeleccionada="cuadrado"
-        numeroFinal = 0
-        numeroParaArea = ""
-    }
-    fun onCirculo(view:View){
-        textViewOpcion = findViewById(R.id.textViewOpcion)
-        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
-        textViewResultado = findViewById(R.id.textViewResultado)
-        textViewOpcion.text = "Opción: Circulo"
-        textViewRadioLado.text = "Radio:"
-        textViewResultado.text = "Resultado: "
-        figuraSeleccionada="circulo"
-        numeroFinal = 0
-        numeroParaArea = ""
-    }
-    fun onOctagono(view:View){
-        textViewOpcion = findViewById(R.id.textViewOpcion)
-        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
-        textViewResultado = findViewById(R.id.textViewResultado)
-        textViewOpcion.text = "Opción: Octagono"
-        textViewRadioLado.text = "Lado: "
-        textViewResultado.text = "Resultado: "
-        figuraSeleccionada="octagono"
-        numeroFinal = 0
-        numeroParaArea = ""
-    }
-    fun onHexagono(view:View){
-        textViewOpcion = findViewById(R.id.textViewOpcion)
-        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
-        textViewResultado = findViewById(R.id.textViewResultado)
-        textViewOpcion.text = "Opción: Hexagono"
-        textViewRadioLado.text = "Lado: "
-        textViewResultado.text = "Resultado: "
-        figuraSeleccionada="hexagono"
-        numeroFinal = 0
-        numeroParaArea = ""
-    }
-    fun onPentagono(view:View){
-        textViewOpcion = findViewById(R.id.textViewOpcion)
-        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
-        textViewResultado = findViewById(R.id.textViewResultado)
-        textViewOpcion.text = "Opción: Pentagono"
-        textViewRadioLado.text = "Lado: "
-        textViewResultado.text = "Resultado: "
-        figuraSeleccionada="pentagono"
         numeroFinal = 0
         numeroParaArea = ""
     }
@@ -216,5 +204,12 @@ class MainActivity : AppCompatActivity() {
         }
         resultado=round(resultado,3)
         textViewResultado.text = textViewResultado.text.toString() + resultado.toString()
+    }
+    // Función para restablecer todos los botones al color predeterminado
+    private fun resetButtons() {
+        for (buttonId in buttonIds) {
+            val button = findViewById<ImageButton>(buttonId)
+            button.setColorFilter(defaultColor)
+        }
     }
 }
