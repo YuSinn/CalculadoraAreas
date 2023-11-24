@@ -16,19 +16,23 @@ import kotlin.math.round
 class MainActivity : AppCompatActivity() {
     val buttonIds = listOf(R.id.btnTriangulo, R.id.btnCuadrado, R.id.btnCirculo, R.id.btnOctagono,
         R.id.btnHexagono, R.id.btnPentagono)
-    val defaultColor: Int by lazy { ContextCompat.getColor(this, R.color.figuras) }
-    val clickedColor: Int by lazy { ContextCompat.getColor(this, R.color.white)}
     lateinit var textViewOpcion:TextView
     lateinit var textViewRadioLado:TextView
     lateinit var textViewResultado:TextView
     var numeroParaArea = ""
     var numeroFinal = 0
     var figuraSeleccionada = ""
+    var defaultColor: Int = 0
+    var clickedColor: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val imageView: ImageView = findViewById(R.id.titulo)
-
+        textViewOpcion = findViewById(R.id.textViewOpcion)
+        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+        textViewResultado = findViewById(R.id.textViewResultado)
+        defaultColor = ContextCompat.getColor(this, R.color.figuras)
+        clickedColor = ContextCompat.getColor(this, R.color.white)
 
 // Lista de ImageButton y sus correspondientes recursos
         val imageButtons: List<Pair<ImageButton, Int>> = listOf(
@@ -54,17 +58,17 @@ class MainActivity : AppCompatActivity() {
             Glide.with(this).asGif().load(resource).into(button)
         }
 
-
         for (buttonId in buttonIds) {
             val button = findViewById<ImageButton>(buttonId)
 
             button.setOnClickListener {
+
                 resetButtons()
                 button.setColorFilter(clickedColor)
 
                 if(buttonId == R.id.btnTriangulo){
                     initTextView()
-                    textViewOpcion.text = "Opción: Triangulo"
+                    textViewOpcion.text = "Opcion: Triangulo"
                     figuraSeleccionada="triangulo"
                 }else if(buttonId == R.id.btnCuadrado){
                     initTextView()
@@ -95,20 +99,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
     }
     fun initTextView(){
-        textViewOpcion = findViewById(R.id.textViewOpcion)
-        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
-        textViewResultado = findViewById(R.id.textViewResultado)
         textViewRadioLado.text = "Lado: "
         textViewResultado.text = "Resultado: "
         numeroFinal = 0
         numeroParaArea = ""
     }
     fun onBorrar(view:View){
-        textViewOpcion = findViewById(R.id.textViewOpcion)
-        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
-        textViewResultado = findViewById(R.id.textViewResultado)
         textViewOpcion.text = "Opción: "
         textViewRadioLado.text = "Lado: "
         textViewResultado.text = "Resultado: "
@@ -116,7 +115,7 @@ class MainActivity : AppCompatActivity() {
         numeroParaArea=""
     }
     fun agregarNumero(view: View) {
-        textViewRadioLado = findViewById(R.id.textViewLadoRadio)
+
         val botonPresionado = view as ImageButton
         val numero = botonPresionado.contentDescription?.toString() ?: ""
         numeroParaArea +=numero
@@ -162,10 +161,9 @@ class MainActivity : AppCompatActivity() {
     }
     fun round(numero: Double, decimales: Int): Double {
         val factor = 10.0.pow(decimales.toDouble())
-        return kotlin.math.round(numero * factor) / factor
+        return round(numero * factor) / factor
     }
     fun onCalcular (view: View){
-        textViewResultado = findViewById(R.id.textViewResultado)
         var resultado :Double
         when (figuraSeleccionada.toLowerCase()) {
             "triangulo" -> {
@@ -208,7 +206,7 @@ class MainActivity : AppCompatActivity() {
     // Función para restablecer todos los botones al color predeterminado
     private fun resetButtons() {
         for (buttonId in buttonIds) {
-            val button = findViewById<ImageButton>(buttonId)
+           val button = findViewById<ImageButton>(buttonId)
             button.setColorFilter(defaultColor)
         }
     }

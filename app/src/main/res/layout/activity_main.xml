@@ -39,8 +39,9 @@
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_1"
                 android:onClick="onTriangulo"
-                app:tint="@color/figuras"
-                android:src="@drawable/triangle" />
+                android:src="@drawable/triangle"
+                android:tag="triangulo"
+                app:tint="@color/figuras" />
 
             <!-- ImageButton 2 -->
             <ImageButton
