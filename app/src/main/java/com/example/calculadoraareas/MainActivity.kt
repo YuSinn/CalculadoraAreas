@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
+import java.util.Locale
 
 import kotlin.math.pow
 import kotlin.math.round
@@ -16,23 +17,23 @@ import kotlin.math.round
 class MainActivity : AppCompatActivity() {
     val buttonIds = listOf(R.id.btnTriangulo, R.id.btnCuadrado, R.id.btnCirculo, R.id.btnOctagono,
         R.id.btnHexagono, R.id.btnPentagono)
+    var defaultColor: Int = 0
+    var clickedColor: Int = 0
     lateinit var textViewOpcion:TextView
     lateinit var textViewRadioLado:TextView
     lateinit var textViewResultado:TextView
     var numeroParaArea = ""
     var numeroFinal = 0
     var figuraSeleccionada = ""
-    var defaultColor: Int = 0
-    var clickedColor: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val imageView: ImageView = findViewById(R.id.titulo)
+        defaultColor =   ContextCompat.getColor(this, R.color.figuras)
+        clickedColor =   ContextCompat.getColor(this, R.color.white)
         textViewOpcion = findViewById(R.id.textViewOpcion)
         textViewRadioLado = findViewById(R.id.textViewLadoRadio)
         textViewResultado = findViewById(R.id.textViewResultado)
-        defaultColor = ContextCompat.getColor(this, R.color.figuras)
-        clickedColor = ContextCompat.getColor(this, R.color.white)
 
 // Lista de ImageButton y sus correspondientes recursos
         val imageButtons: List<Pair<ImageButton, Int>> = listOf(
@@ -58,47 +59,27 @@ class MainActivity : AppCompatActivity() {
             Glide.with(this).asGif().load(resource).into(button)
         }
 
+
         for (buttonId in buttonIds) {
             val button = findViewById<ImageButton>(buttonId)
 
             button.setOnClickListener {
-
                 resetButtons()
                 button.setColorFilter(clickedColor)
 
-                if(buttonId == R.id.btnTriangulo){
-                    initTextView()
-                    textViewOpcion.text = "Opcion: Triangulo"
-                    figuraSeleccionada="triangulo"
-                }else if(buttonId == R.id.btnCuadrado){
-                    initTextView()
-                    textViewOpcion.text = "Opción: Cuadrado"
-                    figuraSeleccionada="cuadrado"
-                }
-                else if(buttonId == R.id.btnCirculo){
+                if(buttonId == R.id.btnCirculo){
                     initTextView()
                     textViewOpcion.text = "Opción: Circulo"
                     textViewRadioLado.text = "Radio: "
                     figuraSeleccionada="circulo"
-                }
-                else if(buttonId == R.id.btnOctagono){
+                    }else {
                     initTextView()
-                    textViewOpcion.text = "Opción: Octagono"
-                    figuraSeleccionada="octagono"
-                }
-                else if(buttonId == R.id.btnHexagono){
-                    initTextView()
-                    textViewOpcion.text = "Opción: Hexagono"
-                    figuraSeleccionada="hexagono"
-                }
-                else if(buttonId == R.id.btnPentagono){
-                    initTextView()
-                    textViewOpcion.text = "Opción: Pentagono"
-                    figuraSeleccionada="pentagono"
+                    textViewOpcion.text = "Opción: " + button.contentDescription?.toString()
+                    figuraSeleccionada =
+                        button.contentDescription.toString().lowercase(Locale.getDefault())
                 }
             }
         }
-
 
     }
     fun initTextView(){
@@ -161,11 +142,11 @@ class MainActivity : AppCompatActivity() {
     }
     fun round(numero: Double, decimales: Int): Double {
         val factor = 10.0.pow(decimales.toDouble())
-        return round(numero * factor) / factor
+        return kotlin.math.round(numero * factor) / factor
     }
     fun onCalcular (view: View){
         var resultado :Double
-        when (figuraSeleccionada.toLowerCase()) {
+        when (figuraSeleccionada.lowercase(Locale.getDefault())) {
             "triangulo" -> {
                 // Fórmula para el área de un triángulo
                 // A = (base * altura) / 2
@@ -206,7 +187,7 @@ class MainActivity : AppCompatActivity() {
     // Función para restablecer todos los botones al color predeterminado
     private fun resetButtons() {
         for (buttonId in buttonIds) {
-           val button = findViewById<ImageButton>(buttonId)
+            val button = findViewById<ImageButton>(buttonId)
             button.setColorFilter(defaultColor)
         }
     }
