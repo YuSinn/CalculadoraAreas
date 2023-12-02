@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var textViewOpcion:TextView
     lateinit var textViewRadioLado:TextView
     lateinit var textViewResultado:TextView
+    lateinit var radioGroupTriangulo:RadioGroup
     var numeroParaArea = ""
     var numeroFinal = 0
     var figuraSeleccionada = ""
@@ -34,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         textViewOpcion = findViewById(R.id.textViewOpcion)
         textViewRadioLado = findViewById(R.id.textViewLadoRadio)
         textViewResultado = findViewById(R.id.textViewResultado)
+        radioGroupTriangulo = findViewById(R.id.radioGroupTriangulo)
+
+
 
 // Lista de ImageButton y sus correspondientes recursos
         val imageButtons: List<Pair<ImageButton, Int>> = listOf(
@@ -77,9 +82,13 @@ class MainActivity : AppCompatActivity() {
                     textViewOpcion.text = "Opción: " + button.contentDescription?.toString()
                     figuraSeleccionada =
                         button.contentDescription.toString().lowercase(Locale.getDefault())
+                    if(figuraSeleccionada.equals("triangulo")) radioGroupTriangulo.setVisibility(View.VISIBLE)
+                    else radioGroupTriangulo.setVisibility(View.INVISIBLE)
                 }
             }
         }
+
+
 
 
     }
@@ -95,6 +104,7 @@ class MainActivity : AppCompatActivity() {
         textViewResultado.text = "Resultado: "
         numeroFinal=0
         numeroParaArea=""
+        radioGroupTriangulo.setVisibility(View.INVISIBLE)
     }
     fun agregarNumero(view: View) {
 
@@ -112,33 +122,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-    fun onCero(view: View){
-        agregarNumero(view)
-    }
-    fun onUno(view: View){
-        agregarNumero(view)
-    }
-    fun onDos(view: View){
-        agregarNumero(view)
-    }
-    fun onTres(view: View){
-        agregarNumero(view)
-    }
-    fun onCuatro(view: View){
-        agregarNumero(view)
-    }
-    fun onCinco(view: View){
-        agregarNumero(view)
-    }
-    fun onSeis(view: View){
-        agregarNumero(view)
-    }
-    fun onSiete(view: View){
-        agregarNumero(view)
-    }fun onOcho(view: View){
-        agregarNumero(view)
-    }
-    fun onNueve(view: View){
+    fun onNumero(view: View) {
         agregarNumero(view)
     }
     fun round(numero: Double, decimales: Int): Double {

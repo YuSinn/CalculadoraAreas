@@ -104,60 +104,125 @@
                 android:src="@drawable/pentagono" />
         </GridLayout>
     </FrameLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.2"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_weight="0.2">
 
-        <TextView
-            android:id="@+id/textViewOpcion"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2.5"
-            android:contextClickable="false"
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3">
+
+            <RadioGroup
+                android:id="@+id/radioGroupTriangulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_weight="0.2" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonLado"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:layout_weight="0.2"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawableStart="@drawable/radio_button_selector"
+                    android:drawablePadding="12dp"
+                    android:paddingLeft="12dp"
+                    android:text="Lado"
+                    android:textColor="@color/figuras"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:checked="true"/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_weight="0.3" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonAltura"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:layout_weight="0.2"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawableStart="@drawable/radio_button_selector"
+                    android:drawablePadding="12dp"
+                    android:paddingLeft="12dp"
+                    android:text="Altura"
+                    android:textColor="@color/figuras"
+                    android:textSize="22sp"
+
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_weight="0.2" />
+            </RadioGroup>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
             android:gravity="center"
-            android:text="Opción: "
-            android:textColor="@color/figuras"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.25" />
+            <TextView
+                android:id="@+id/textViewOpcion"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.5"
+                android:contextClickable="false"
+                android:gravity="center|left"
+                android:text="Opción: "
+                android:textColor="@color/figuras"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textViewLadoRadio"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2.5"
-            android:gravity="center"
-            android:text="Lado: "
-            android:textColor="@color/figuras"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.25" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.25" />
+            <TextView
+                android:id="@+id/textViewLadoRadio"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.5"
+                android:gravity="center|left"
+                android:text="Lado: "
+                android:textColor="@color/figuras"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textViewResultado"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2.5"
-            android:gravity="center_horizontal"
-            android:text="Resultado: "
-            android:textColor="@color/figuras"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.25" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textViewResultado"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.5"
+                android:gravity="center_horizontal|left"
+                android:text="Resultado: "
+                android:textColor="@color/figuras"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
+        </LinearLayout>
+</LinearLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -182,7 +247,7 @@
                 android:layout_gravity="center_horizontal|fill"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_nueve"
-                android:onClick="onNueve"
+                android:onClick="onNumero"
                 android:scaleType="fitCenter"
                 android:src="@drawable/nueve2" />
 
@@ -195,7 +260,7 @@
                 android:layout_gravity="center_horizontal|fill"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_ocho"
-                android:onClick="onOcho"
+                android:onClick="onNumero"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ocho2" />
 
@@ -208,7 +273,7 @@
                 android:layout_gravity="center_horizontal|fill"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_siete"
-                android:onClick="onSiete"
+                android:onClick="onNumero"
                 android:scaleType="fitCenter"
                 android:src="@drawable/siete2" />
 
@@ -221,7 +286,7 @@
                 android:layout_gravity="center_horizontal|fill"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_seis"
-                android:onClick="onSeis"
+                android:onClick="onNumero"
                 android:scaleType="fitCenter"
                 android:src="@drawable/seis2" />
 
@@ -234,7 +299,7 @@
                 android:layout_gravity="center_horizontal|fill"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_cinco"
-                android:onClick="onCinco"
+                android:onClick="onNumero"
                 android:scaleType="fitCenter"
                 android:src="@drawable/cinco2" />
 
@@ -247,7 +312,7 @@
                 android:layout_gravity="center_horizontal|fill"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_cuatro"
-                android:onClick="onCuatro"
+                android:onClick="onNumero"
                 android:scaleType="fitCenter"
                 android:src="@drawable/cuatro2" />
 
@@ -260,7 +325,7 @@
                 android:layout_gravity="center_horizontal|fill"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_tres"
-                android:onClick="onTres"
+                android:onClick="onNumero"
                 android:scaleType="fitCenter"
                 android:src="@drawable/tres2" />
 
@@ -273,7 +338,7 @@
                 android:layout_gravity="center_horizontal|fill"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_dos"
-                android:onClick="onDos"
+                android:onClick="onNumero"
                 android:scaleType="fitCenter"
                 android:src="@drawable/dos2" />
 
@@ -286,7 +351,7 @@
                 android:layout_gravity="center_horizontal|fill"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_uno"
-                android:onClick="onUno"
+                android:onClick="onNumero"
                 android:scaleType="fitCenter"
                 android:src="@drawable/uno2" />
 
@@ -299,7 +364,7 @@
                 android:layout_gravity="center_horizontal|fill"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/description_image_button_zero"
-                android:onClick="onCero"
+                android:onClick="onNumero"
                 android:scaleType="fitCenter"
                 android:src="@drawable/cero3" />
         </GridLayout>
