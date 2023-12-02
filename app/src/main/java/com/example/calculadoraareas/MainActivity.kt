@@ -81,6 +81,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
     }
     fun initTextView(){
         textViewRadioLado.text = "Lado: "
