@@ -390,6 +390,7 @@
             android:background="?android:attr/selectableItemBackground"
             android:contentDescription="@string/description_image_button_calcular"
             android:onClick="onCalcular"
+            android:scaleType="fitCenter"
             android:src="@drawable/calcular3" />
 
         <Space
@@ -405,6 +406,7 @@
             android:background="?android:attr/selectableItemBackground"
             android:contentDescription="@string/description_image_button_borrar"
             android:onClick="onBorrar"
+            android:scaleType="fitCenter"
             android:src="@drawable/borrar2" />
 
         <Space

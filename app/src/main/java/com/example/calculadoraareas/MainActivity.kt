@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -24,9 +25,13 @@ class MainActivity : AppCompatActivity() {
     lateinit var textViewRadioLado:TextView
     lateinit var textViewResultado:TextView
     lateinit var radioGroupTriangulo:RadioGroup
+    lateinit var radioButtonLado: RadioButton
+    lateinit var radioButtonAltura: RadioButton
     var numeroParaArea = ""
     var numeroFinal = 0
     var figuraSeleccionada = ""
+    var numeroAltura = 0
+    var alturaParaArea=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         textViewRadioLado = findViewById(R.id.textViewLadoRadio)
         textViewResultado = findViewById(R.id.textViewResultado)
         radioGroupTriangulo = findViewById(R.id.radioGroupTriangulo)
+        radioButtonLado = findViewById(R.id.radioButtonLado)
+        radioButtonAltura = findViewById(R.id.radioButtonAltura)
 
 
 
@@ -77,6 +84,7 @@ class MainActivity : AppCompatActivity() {
                     textViewOpcion.text = "Opción: Circulo"
                     textViewRadioLado.text = "Radio: "
                     figuraSeleccionada="circulo"
+                    radioGroupTriangulo.setVisibility(View.INVISIBLE)
                     }else {
                     initTextView()
                     textViewOpcion.text = "Opción: " + button.contentDescription?.toString()
@@ -97,6 +105,7 @@ class MainActivity : AppCompatActivity() {
         textViewResultado.text = "Resultado: "
         numeroFinal = 0
         numeroParaArea = ""
+        alturaParaArea=""
     }
     fun onBorrar(view:View){
         textViewOpcion.text = "Opción: "
@@ -104,20 +113,46 @@ class MainActivity : AppCompatActivity() {
         textViewResultado.text = "Resultado: "
         numeroFinal=0
         numeroParaArea=""
+        numeroAltura = 0
+        alturaParaArea=""
         radioGroupTriangulo.setVisibility(View.INVISIBLE)
+        resetButtons()
     }
     fun agregarNumero(view: View) {
 
         val botonPresionado = view as ImageButton
         val numero = botonPresionado.contentDescription?.toString() ?: ""
-        numeroParaArea +=numero
+        /*numeroParaArea += numero
         // Obtener el texto actual del TextView
         val textoActual = textViewRadioLado.text.toString()
 
-        if(textoActual.length < 11) {
+        if (textoActual.length < 11) {
             // Concatenar el número al texto actual
             textViewRadioLado.text = "$textoActual$numero"
             numeroFinal = numeroParaArea.toInt()
+        }*/
+        if(radioButtonLado.isChecked) {
+            textViewRadioLado.text ="Lado: "
+            numeroParaArea += numero
+            // Obtener el texto actual del TextView
+            val textoActual = textViewRadioLado.text.toString()
+
+            if (textoActual.length < 11) {
+                // Concatenar el número al texto actual
+                textViewRadioLado.text = "$textoActual$numero"
+                numeroFinal = numeroParaArea.toInt()
+            }
+        }else{
+            textViewRadioLado.text="Altura: "
+            alturaParaArea += numero
+            // Obtener el texto actual del TextView
+            val textoActual = textViewRadioLado.text.toString()
+
+            if (textoActual.length < 11) {
+                // Concatenar el número al texto actual
+                textViewRadioLado.text = "$textoActual$numero"
+                numeroAltura = alturaParaArea.toInt()
+            }
         }
 
 
@@ -135,7 +170,9 @@ class MainActivity : AppCompatActivity() {
             "triangulo" -> {
                 // Fórmula para el área de un triángulo
                 // A = (base * altura) / 2
-                resultado = (kotlin.math.sqrt(3.0) / 4) * numeroFinal.toDouble().pow(2)
+                resultado = ((numeroFinal*numeroAltura)/2).toDouble()
+                radioButtonLado.isChecked = true
+
             }
             "cuadrado" -> {
                 // Fórmula para el área de un cuadrado
