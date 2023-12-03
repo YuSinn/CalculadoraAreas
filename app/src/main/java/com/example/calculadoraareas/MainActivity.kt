@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val imageView: ImageView = findViewById(R.id.titulo)
         defaultColor =   ContextCompat.getColor(this, R.color.figuras)
         clickedColor =   ContextCompat.getColor(this, R.color.white)
@@ -122,17 +123,8 @@ class MainActivity : AppCompatActivity() {
 
         val botonPresionado = view as ImageButton
         val numero = botonPresionado.contentDescription?.toString() ?: ""
-        /*numeroParaArea += numero
-        // Obtener el texto actual del TextView
-        val textoActual = textViewRadioLado.text.toString()
 
-        if (textoActual.length < 11) {
-            // Concatenar el número al texto actual
-            textViewRadioLado.text = "$textoActual$numero"
-            numeroFinal = numeroParaArea.toInt()
-        }*/
         if(radioButtonLado.isChecked) {
-            textViewRadioLado.text ="Lado: "
             numeroParaArea += numero
             // Obtener el texto actual del TextView
             val textoActual = textViewRadioLado.text.toString()
@@ -143,7 +135,6 @@ class MainActivity : AppCompatActivity() {
                 numeroFinal = numeroParaArea.toInt()
             }
         }else{
-            textViewRadioLado.text="Altura: "
             alturaParaArea += numero
             // Obtener el texto actual del TextView
             val textoActual = textViewRadioLado.text.toString()
@@ -163,6 +154,13 @@ class MainActivity : AppCompatActivity() {
     fun round(numero: Double, decimales: Int): Double {
         val factor = 10.0.pow(decimales.toDouble())
         return kotlin.math.round(numero * factor) / factor
+    }
+
+    fun onAltura(view: View){
+        textViewRadioLado.text = "Altura: "
+    }
+    fun onLado(view: View){
+        textViewRadioLado.text = "Lado: "
     }
     fun onCalcular (view: View){
         var resultado :Double
