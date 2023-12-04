@@ -136,6 +136,7 @@
                     android:checked="true"
                     android:drawableStart="@drawable/radio_button_selector"
                     android:drawablePadding="12dp"
+                    android:onClick="onLado"
                     android:paddingLeft="12dp"
                     android:text="Lado"
                     android:textColor="@color/figuras"
@@ -156,11 +157,12 @@
                     android:button="@null"
                     android:drawableStart="@drawable/radio_button_selector"
                     android:drawablePadding="12dp"
+                    android:onClick="onAltura"
                     android:paddingLeft="12dp"
                     android:text="Altura"
                     android:textColor="@color/figuras"
-                    android:textSize="22sp"
 
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <Space
